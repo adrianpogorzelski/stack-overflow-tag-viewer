@@ -1,7 +1,7 @@
-import Filters from "./Filters";
-import Footer from "./Footer";
-import Header from "./Header";
-import TagTable from "./TagTable";
+import Filters from "./components/Filters";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import TagTable from "./components/TagTable";
 
 function App() {
   return (
