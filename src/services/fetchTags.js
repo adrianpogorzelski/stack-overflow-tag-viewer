@@ -1,14 +1,24 @@
-export const fetchTags = async () => {
-    try {
-        const response = await fetch("https://api.stackexchange.com/2.3/tags?order=xx&sort=popular&site=stackoverflow")
+export const fetchTags = async (dispatch) => {
+    const ENDPOINT = "https://api.stackexchange.com/2.3/tags?"
 
+    try {
+        const response = await fetch(`${ENDPOINT}order=desc&sort=popular&site=stackoverflow`)
+
+        /*
         if (!response.ok) {
             const error = await response.json()
             const errorMessage = `Error ${error.error_id}: ${error.error_name} - ${error.error_message}`
-            throw errorMessage;
-            return errorMessage;
+            throw new Error(errorMessage);
         }
-        return response.json();
+
+         */
+
+        const data = await response.json();
+
+        dispatch({ type: 'ADD_TAGS', payload: data.items });
+        dispatch({type: 'SET_OK'})
+        return data.items;
+
     } catch (e) {
         console.error(e)
         return e
