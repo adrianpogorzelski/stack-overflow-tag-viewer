@@ -1,11 +1,12 @@
 export const setOK = () => ({
-    type: 'SET_OK',
+    type: 'SET_OK'
 });
 
-export const setError = () => ({
+export const setError = (errorMessage) => ({
     type: 'SET_ERROR',
+    payload: errorMessage;
 });
 
-export const setError = () => ({
-    type: 'SET_LOADING',
+export const setLoading = () => ({
+    type: 'SET_LOADING'
 });

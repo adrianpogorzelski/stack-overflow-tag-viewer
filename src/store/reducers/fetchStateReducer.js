@@ -1,4 +1,6 @@
-const initialState = {currentState: 'loading'}
+const initialState = {
+    currentState: 'loading',
+    errorMessage: null}
 
 const fetchStateReducer = (state = initialState, action) => {
     switch(action.type) {
@@ -10,7 +12,8 @@ const fetchStateReducer = (state = initialState, action) => {
         case "SET_ERROR":
             return {
                 ...state,
-                currentState: 'error'
+                currentState: 'error',
+                errorMessage: action.payload
             };
         case "SET_LOADING":
             return {
