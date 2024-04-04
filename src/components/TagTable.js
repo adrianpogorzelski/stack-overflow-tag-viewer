@@ -1,6 +1,4 @@
-import React, {useEffect} from "react";
-import {fetchTags} from "../services/fetchTags";
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
 
 const TagTable = ({tags, currentState, errorMessage}) => {
 
