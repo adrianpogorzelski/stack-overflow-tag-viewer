@@ -2,22 +2,22 @@ import React, {useEffect} from "react";
 import {fetchTags} from "../services/fetchTags";
 import { useDispatch, useSelector } from 'react-redux';
 
-const TagTable = () => {
+const TagTable = ({fetchState = 'loading'}) => {
 
     const dispatch = useDispatch();
     const tags = useSelector(state => state.tags.items);
-    const fetchState = useSelector(state => state.fetchState)
+    const currentPage = useSelector(state => state.page.currentPage)
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                await fetchTags(dispatch)
+                await fetchTags(dispatch, currentPage)
             } catch (e) {
                 console.error(e)
             }
         }
         fetchData()
-    }, [dispatch])
+    }, [dispatch, currentPage])
 
     return (
         <div className="container min-h-screen">
@@ -30,7 +30,7 @@ const TagTable = () => {
                 </thead>
             </table>
 
-            {fetchState.currentState === 'loading' ? /* Check if the fetch is completed */
+            {useSelector(state => state.fetchState) === 'loading' ? /* Check if the fetch is completed */
                 <div className='hero my-5'>
                     <span className="loading loading-spinner loading-lg"></span>
                 </div> :

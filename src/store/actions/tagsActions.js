@@ -1,4 +1,4 @@
-export const addData = (data) => ({
+export const addTags = (data) => ({
     type: 'ADD_TAGS',
     payload: data,
 });
