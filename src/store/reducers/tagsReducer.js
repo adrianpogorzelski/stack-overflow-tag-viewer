@@ -1,5 +1,6 @@
 const initialState = {
-    items: []
+    items: [],
+    hasMore: false
 }
 
 const tagsReducer = (state = initialState, action) => {
@@ -9,6 +10,11 @@ const tagsReducer = (state = initialState, action) => {
                 ...state,
                 items: action.payload
             };
+        case "ADD_HASMORE":
+            return {
+                ...state,
+                hasMore: action.payload
+            }
         default:
             return state
     }

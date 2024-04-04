@@ -14,7 +14,8 @@ export const fetchTags = async (dispatch, currentPage) => {
 
         const data = await response.json();
         dispatch({ type: 'ADD_TAGS', payload: data.items });
-        dispatch({type: 'SET_OK'})
+        dispatch({ type: 'ADD_HASMORE', payload: data.has_more });
+        dispatch({type: 'SET_OK'});
         return data.items;
 
     } catch (e) {

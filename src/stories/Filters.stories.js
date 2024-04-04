@@ -2,7 +2,7 @@ import Filters  from '../components/Filters';
 import '../output.css'
 
 export default {
-    title: 'Components/Filter',
+    title: 'Filter',
     component: Filters,
     tags: ['autodocs'],
     parameters: {

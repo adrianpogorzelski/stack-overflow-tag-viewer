@@ -2,7 +2,7 @@ import Footer  from '../components/Footer';
 import '../output.css'
 
 export default {
-    title: 'Components/Footer',
+    title: 'Footer',
     component: Footer,
     tags: ['autodocs'],
     parameters: {

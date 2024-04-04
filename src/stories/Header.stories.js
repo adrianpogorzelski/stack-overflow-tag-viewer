@@ -3,7 +3,7 @@ import { fn } from '@storybook/test';
 import '../output.css'
 
 export default {
-  title: 'Components/Header',
+  title: 'Header',
   component: Header,
   tags: ['autodocs'],
   parameters: {

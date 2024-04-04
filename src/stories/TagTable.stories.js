@@ -5,7 +5,7 @@ import React, { useEffect } from 'react'
 import { Provider, useDispatch } from 'react-redux'
 
 export default {
-    title: 'Components/TagTable',
+    title: 'TagTable',
     component: TagTable,
     tags: ['autodocs'],
     parameters: {
