@@ -15,11 +15,40 @@ export default {
         <Provider store={store}>
             <Story />
         </Provider>
-    ]
+    ],
 };
-
-export const Render = {};
 
 export const Loading = {
+    args: {
+        currentState: 'loading',
+    }
 };
+
+export const OK = {
+    args: {
+        tags: [
+            {
+                name: "first tag",
+                count: 123
+            },
+            {
+                name: "second tag",
+                count: 456
+            },
+            {
+                name: "third tag",
+                count: 789
+            }],
+        currentState: 'ok',
+    }
+};
+
+export const Error = {
+    args: {
+        currentState: 'error',
+        errorMessage: 'Error 123: Something went very wrong'
+    }
+}
+
+
 
