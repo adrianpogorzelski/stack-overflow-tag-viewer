@@ -1,8 +1,16 @@
-export const fetchTags = async (dispatch, currentPage) => {
+export const fetchTags = async (dispatch, currentPage, tagsPerPage, sortBy, order) => {
+
     const ENDPOINT = "https://api.stackexchange.com/2.3/tags?"
 
     try {
-        const response = await fetch(`${ENDPOINT}page=${currentPage}&order=xx&sort=popular&site=stackoverflow`)
+        const response = await fetch(
+            `${ENDPOINT}
+            page=${currentPage}
+            &pagesize=${tagsPerPage}
+            &order=${order}
+            &sort=${sortBy}
+            &site=stackoverflow`
+        )
 
         if (!response.ok) {
             const error = await response.json()
