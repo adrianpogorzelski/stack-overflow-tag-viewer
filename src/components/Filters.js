@@ -21,8 +21,6 @@ const Filters = () => {
     return (
         <div className='container my-5 mx-auto flex justify-center items-end'>
 
-            <h2 className="text-xl sm:me-5">Filters</h2>
-
             <SelectFilter
                 description="Tags per page"
                 handlerFunction={handleTagsPerPageChange}
