@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from 'react-redux'
+import SelectFilter from './SelectFilter'
 
 const Filters = () => {
 
@@ -22,46 +23,24 @@ const Filters = () => {
 
             <h2 className="text-xl sm:me-5">Filters</h2>
 
-            <label className="form-control w-auto max-w-xs px-5">
-                <div className="label">
-                    <span className="label-text">Tags per page</span>
-                </div>
-                <select
-                    className="select select-xs sm:select-sm select-bordered w-fit max-w-xs"
-                    onChange={handleTagsPerPageChange}
-                >
-                    <option value='20'>20</option>
-                    <option value='50'>50</option>
-                    <option value='100'>100</option>
-                </select>
-            </label>
+            <SelectFilter
+                description="Tags per page"
+                handlerFunction={handleTagsPerPageChange}
+                options={[20, 50, 100]}
+            />
 
-            <label className="form-control w-auto max-w-xs px-5">
-                <div className="label">
-                    <span className="label-text">Sort by</span>
-                </div>
-                <select
-                    className="select select-xs sm:select-sm select-bordered w-fit max-w-xs"
-                    onChange={handleSortBy}
-                >
-                    <option value='popular'>Popularity</option>
-                    <option value='activity'>Activity</option>
-                    <option value='name'>Name</option>
-                </select>
-            </label>
+            <SelectFilter
+                description="Sort by"
+                handlerFunction={handleSortBy}
+                options={['popular', 'activity', 'name']}
+            />
 
-            <label className="form-control w-auto max-w-xs px-5">
-                <div className="label">
-                    <span className="label-text">Order by</span>
-                </div>
-                <select
-                    className="select select-xs sm:select-sm select-bordered w-fit max-w-xs"
-                    onChange={handleSetOrder}
-                >
-                    <option value='desc'>Descending</option>
-                    <option value='asc'>Ascending</option>
-                </select>
-            </label>
+            <SelectFilter
+                description="Order by"
+                handlerFunction={handleSetOrder}
+                options={['desc', 'asc']}
+            />
+
         </div>
     )
 }
